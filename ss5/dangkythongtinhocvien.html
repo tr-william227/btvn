@@ -5,6 +5,7 @@
     <title>Đăng ký thông tin học viên</title>
 </head>
 <body>
+<form action="dangkythongtinhocvien" method="post">
 <h1>Đăng Ký Học Viên</h1>
 <label for="name">Họ và tên</label>: <input type="text" id="name">
 <br>
@@ -15,4 +16,17 @@ Giới tính:
     <input type="radio" id="female" value="gender" name="gender"> Nữ
 <br>
 <label for="address">Địa chỉ</label>: <textarea name="address" id="address" cols="30" rows="4"></textarea>
+<br>
+Lớp:
+<select name="Lớp" id="class">
+    <option value="class">Chọn lớp</option>
+</select>
+<br>
+<label for="email">Email</label>: <input type="text" id="email">
+<br>
+<label for="phone">Số điện thoại</label>: <input type="text" id="phone">
+<br>
+<button type="submit">Đăng ký</button>
+<button type="reset">Nhập lại</button>
+</form>
 </html>
