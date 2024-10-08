@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tra cứu từ điển</title>
+</head>
+<body>
+<h1>Tra cứu từ điển Anh - Việt</h1>
+<form id="searchForm">
+  <label for="word">Nhập từ tiếng Anh:</label>
+  <input type="text" id="word" name="word">
+  <button type="submit">Tìm kiếm</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+  let englishWords = ["apple", "banana"];
+
+  let vietnameseWords = ["táo", "chuối"];
+
+  //hàm tìm kiếm và hiển thị kết quả
+  document.getElementById('searchForm').addEventListener('submit', function(event) { //thêm chức năng
+    event.preventDefault(); //ngăn form gửi lại trang
+    let word = document.getElementById('word').value.toLowerCase(); // Lấy từ người dùng nhập và chuyển về chữ thường
+    let index = englishWords.indexOf(word); // Tìm vị trí của từ trong mảng
+
+    if (index !== -1) {
+      //nếu tìm thấy, hiển thị từ tiếng Việt tương ứng
+      document.getElementById('result').textContent = "Nghĩa tiếng Việt: " + vietnameseWords[index];
+    }
+    else {
+      //nếu không tìm thấy, hiển thị thông báo
+      document.getElementById('result').textContent = "Không tìm thấy từ này.";
+    }
+  })
+</script>
+</body>
+</html>
