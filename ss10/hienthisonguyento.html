@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Số Nguyên Tố Đầu Tiên</title>
+</head>
+<body>
+<h1>Các Số Nguyên Tố Đầu Tiên</h1>
+<input type="number" id="soluong" placeholder="Nhập số lượng" />
+<button id="nhapso">Hiển Thị</button>
+<p id="result"></p>
+
+<script>
+    document.getElementById('nhapso').addEventListener('click', function() {
+        const numbers = parseInt(document.getElementById('soluong').value) || 20; // Mặc định là 20
+        let count = 0; // Đếm số nguyên tố đã tìm thấy
+        let N = 2; // Bắt đầu kiểm tra từ số 2
+        let resultText = ""; // Chuỗi chứa kết quả
+
+        while (count < numbers) {
+            // Kiểm tra xem N có phải là số nguyên tố không
+            let isPrime = true;
+
+            for (let i = 2; i <= Math.sqrt(N); i++) {
+                if (N % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            // Nếu N là số nguyên tố
+            if (isPrime) {
+                resultText += N + " "; // Thêm N vào chuỗi kết quả
+                count++; // Tăng số lượng số nguyên tố đã tìm thấy
+            }
+
+            N++; // Tăng N để kiểm tra số tiếp theo
+        }
+
+        document.getElementById('result').textContent = resultText; // Hiển thị kết quả
+    });
+</script>
+</body>
+</html>

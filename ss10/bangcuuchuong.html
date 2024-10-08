@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng Cửu Chương</title>
+</head>
+<body>
+<h1>Bảng Cửu Chương</h1>
+<table border="1" id="multiplicationTable"></table>
+
+<script>
+    // Bước 2: Viết mã JavaScript để tạo bảng cửu chương
+    const table = document.getElementById('multiplicationTable');
+
+    for (let i = 1; i <= 9; i++) {
+        // Tạo một hàng mới
+        let row = document.createElement('tr');
+
+        for (let j = 1; j <= 9; j++) {
+            // Tạo một ô mới
+            let blank = document.createElement('td');
+            blank.textContent = `${i} x ${j} = ${i * j}`; // Nội dung ô
+            row.appendChild(blank); // Thêm ô vào hàng
+        }
+
+        table.appendChild(row); // Thêm hàng vào bảng
+    }
+</script>
+</body>
+</html>
